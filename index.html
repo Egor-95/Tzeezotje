@@ -184,7 +184,7 @@
     </main>
     <div id="customform" class="customform" >
         <div class="form-content">
-            <form action="feedBack" method="POST" onsubmit="return false" class="form-body">
+            <!-- <form action="feedBack" method="POST" onsubmit="return false" class="form-body">
                         <a href="#" class="form-close">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
                                 <path fill="#D3B47F" d="M14 .7l-.7-.7L7 6.3.7 0 0 .7 6.3 7 0 13.3l.7.7L7 7.7l6.3 6.3.7-.7L7.7 7z" />
@@ -193,9 +193,97 @@
                 <input class="form__input" name="name" type="text" placeholder="Имя">
                 <input class="form__input" name="phone" type="tel" placeholder="Телефон">
                 <input type="submit" class="form__btn" value="Отправить">
-            </form>
+            </form> -->
         </div>
     </div>
+
+    <h2>Первая форма</h2>
+    
+    <form id="my_form">
+    
+        <div class="mar10-tb"><label>Имя: <input name="f[name]"></label></div>
+        <div class="mar10-tb"><label>Телефон: <input name="f[phone]"></label></div>
+        <div><button type="submit">Отправить</button></div>
+    
+    </form>
+    
+    <div id="my_message"></div>
+    
+    <script>
+        $('#my_form').submit(function () {
+
+            $.post(
+                'post.php', // адрес обработчика
+                $("#my_form").serialize(), // отправляемые данные  		
+
+                function (msg) { // получен ответ сервера  
+                    $('#my_form').hide('slow');
+                    $('#my_message').html(msg);
+                }
+            );
+
+            return false;
+        });
+    </script>
+    
+    
+    <hr>
+    
+    
+    <h2>Вторая форма</h2>
+    
+    <div><button type="button" id="my_form_send2">Отправить</button></div>
+    
+    <form id="my_form2">
+        <div class="mar10-tb"><label>Имя: <input name="f[name]"></label></div>
+        <div class="mar10-tb"><label>Телефон: <input name="f[phone]"></label></div>
+    </form>
+    
+    <div id="my_message2"></div>
+    
+    <script>
+        $('#my_form_send2').click(function () {
+
+            $.post(
+                'post.php', // адрес обработчика
+                $("#my_form2").serialize(), // отправляемые данные  		
+
+                function (msg) { // получен ответ сервера  
+                    $('#my_form2').hide('slow');
+                    $('#my_message2').html(msg);
+                }
+            );
+
+        });
+    </script>
+    
+    <h2>Форма на email</h2>
+    
+    <form id="my_form_email">
+        <div class="mar10-tb"><label>Имя: <input type="text" name="f[name]" required></label></div>
+        <div class="mar10-tb"><label>Email: <input type="email" name="f[email]" required></label></div>
+        <div><button type="submit">Отправить</button></div>
+    </form>
+    
+    <div id="my_message_email"></div>
+    
+    <script>
+        $('#my_form_email').submit(function () {
+
+            $.post(
+                'post-email.php', // адрес обработчика
+                $("#my_form_email").serialize(), // отправляемые данные  		
+
+                function (msg) { // получен ответ сервера  
+                    // $('#my_form_email').hide('slow');
+                    $('#my_message_email').html(msg);
+                }
+            );
+
+            return false;
+        });
+    </script>
+    
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/script.js"></script>
