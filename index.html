@@ -186,7 +186,7 @@
     </main>
     <div id="customform" class="customform" >
         <div class="form-content">
-            <form action="feedBack" method="post" onsubmit="return false" class="form-body">
+            <form action="feedBack" method="POST" onsubmit="return false" class="form-body">
                         <a href="#" class="form-close">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
                                 <path fill="#D3B47F" d="M14 .7l-.7-.7L7 6.3.7 0 0 .7 6.3 7 0 13.3l.7.7L7 7.7l6.3 6.3.7-.7L7.7 7z" />
@@ -213,7 +213,7 @@ $("document").ready(function () {
 
         $.ajax({
             url: 'mail.php',         /* Куда отправить запрос */
-            method: 'post',             /* Метод запроса (post или get) */
+            method: 'POST',             /* Метод запроса (post или get) */
             dataType: 'html',          /* Тип данных в ответе (xml, json, script, html). */
             data: dataform,     /* Данные передаваемые в массиве */
             success: function (data) {   /* функция которая будет выполнена после успешного запроса.  */
