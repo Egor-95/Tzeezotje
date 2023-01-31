@@ -20,24 +20,21 @@ if (!$name)
 }
 
 
-$to = 'ваш@email'; // адрес получателя
+$to = 'ваш@email'; 
 
-$subject = 'Тема письма'; // тема письма
+$subject = 'Тема письма'; 
 
-// формируем тело сообщения
 $message = 'Имя: ' . $name . "\r\n" . 'Email: ' . $email; 
 
-// формируем headers для письма
-$headers = 'From: '. $email . "\r\n"; // от кого
+$headers = 'From: '. $email . "\r\n"; 
  
-// кодируем заголовок в UTF-8
+
 $subject = preg_replace("/(\r\n)|(\r)|(\n)/", "", $subject);
 $subject = preg_replace("/(\t)/", " ", $subject);
 $subject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
 	
-// отправка
+
 @mail($to, $subject, $message, $headers);
 
 echo 'Спасибо, ваше сообщение отправлено!';
 
-# end of file

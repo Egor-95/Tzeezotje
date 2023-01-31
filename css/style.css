@@ -238,11 +238,7 @@ body {
     padding-top: 80px;
 }
 
-.container {}
 
-.menu-timetable {}
-
-.timtable-list {}
 
 .timtable-item {
     padding-bottom: 25px;
@@ -320,9 +316,7 @@ body {
     height: 335px;
 }
 
-.swiper-img {
-   
-    }
+
 
 .swiper-slide {
     padding: 0 193px;
@@ -456,9 +450,6 @@ form input {
     bottom: 120px;
 }
 
-.form__input {}
-
-.form__btn {}
 
 /* media */
 

@@ -13,26 +13,34 @@ const swiper = new Swiper('.swiper', {
 
 });
 
-// Отправка заявки
+// form
 
-$("document").ready(function () {
+$('#my_form_email').submit(function () {
 
-    $("#feedBack").on("submit", function () {
 
-        let dataform = $(this).serialize()
 
-        $.ajax({
-            url: './mail.php',         /* Куда отправить запрос */
-            method: 'POST',             /* Метод запроса (post или get) */
-            dataType: 'html',          /* Тип данных в ответе (xml, json, script, html). */
-            data: dataform,     /* Данные передаваемые в массиве */
-            success: function (data) {   /* функция которая будет выполнена после успешного запроса.  */
-                alert(data); /* В переменной data содержится ответ от index.php. */
-            }
-        });
+    $.post(
+        'post-email.php', 
+        $("#my_form_email").serialize(),  		
 
-    })
+        function (msg) { 
+            $('#my_message_email').html(msg);
+
+            
+        }
+    );
+
+    return false;
+
+    
+});
+
+const form = document.querySelector('.form');
+document.querySelector('.form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    this.reset();
 })
+
 
 
 
