@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
-
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body>
     <header class="header">
@@ -200,35 +198,8 @@
     </div>
 
 
-
-
-   
-    
-<script>
-$("document").ready(function () {
-
-    $("#feedBack").on("submit", function () {
-
-        let dataform = $(this).serialize()
-
-        $.ajax({
-            url: 'mail.php',         /* Куда отправить запрос */
-            method: 'POST',             /* Метод запроса (post или get) */
-            dataType: 'html',          /* Тип данных в ответе (xml, json, script, html). */
-            data: dataform,     /* Данные передаваемые в массиве */
-            success: function (data) {   /* функция которая будет выполнена после успешного запроса.  */
-                alert(data); /* В переменной data содержится ответ от index.php. */
-            }
-        });
-        
-    })
-})
-
-</script>
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="/js/script.js"></script>
 </body>
