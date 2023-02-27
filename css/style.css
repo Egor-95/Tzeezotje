@@ -221,7 +221,11 @@ body {
     opacity: 1;
 }
 
-.header-button:hover {
+.header-button-link {
+    transition: box-shadow 0.3s ease;
+}
+
+.header-button-link:hover {
     box-shadow: 0 0 20px 10px #5c699f;
 }
 
